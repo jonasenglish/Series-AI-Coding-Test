@@ -20,3 +20,5 @@ Example File:
 ```
 
 A few files containing some lines to test the validator are included in this repo within the "Test Files" folder.
+
+A premade build of the Unity Project is available in the releases (https://github.com/jonasenglish/Series-AI-Coding-Test/releases/tag/Premade-Build)

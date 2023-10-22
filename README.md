@@ -22,3 +22,8 @@ Example File:
 A few files containing some lines to test the validator are included in this repo within the "Test Files" folder.
 
 A premade build of the Unity Project is available in the releases (https://github.com/jonasenglish/Series-AI-Coding-Test/releases/tag/Premade-Build)
+
+Below is an example of how to use the Application:
+
+https://github.com/jonasenglish/Series-AI-Coding-Test/assets/70903639/1e2866ff-f6d9-4a16-afc5-1bf0ad2f134f
+

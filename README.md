@@ -25,5 +25,6 @@ A premade build of the Unity Project is available in the releases (https://githu
 
 Below is an example of how to use the Application:
 
-https://github.com/jonasenglish/Series-AI-Coding-Test/assets/70903639/1e2866ff-f6d9-4a16-afc5-1bf0ad2f134f
+https://github.com/jonasenglish/Series-AI-Coding-Test/assets/70903639/c859a186-3b39-4804-b6c4-d7df05d331a6
+
 

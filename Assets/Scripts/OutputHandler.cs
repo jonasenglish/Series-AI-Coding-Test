@@ -1,18 +1,27 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class OutputHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private TextMeshProUGUI m_OutputText;
+
+    private StackValidator Validator => StackValidator.Instance;
+
     void Start()
     {
-        
+        Validator.OnOutput += StackValidator_OnOutput;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StackValidator_OnOutput(string output)
     {
-        
+        m_OutputText.text += output + "\n";
+    }
+
+    public void OnClick_Clear()
+    {
+        m_OutputText.text = string.Empty;
     }
 }

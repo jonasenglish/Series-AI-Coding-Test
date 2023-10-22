@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private TMP_InputField m_Input;
+
+    StackValidator Validator => StackValidator.Instance;
+
+    public void OnClick_ValidateStack()
     {
-        
+        Validator.ValidateStack_NoExpectedOutput(m_Input.text);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

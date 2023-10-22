@@ -36,12 +36,14 @@ public class StackValidator : MonoBehaviour
                 return false;
             }
 
+            // Pushing numbers from 0 to current to ensure the stack remains in sequential order
             while (nextPush <= current)
             {
                 stack.Push(nextPush);
                 nextPush++;
             }
 
+            // Stack Count will be 0 if nextPush is > current thus invalidating the stack
             if (stack.Count == 0 || stack.Peek() != current)
             {
                 return false;
@@ -52,6 +54,7 @@ public class StackValidator : MonoBehaviour
             }
         }
 
+        // Sequence was Valid
         return true;
     }
 

@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.IO;
-using UnityEditor;
 using TMPro;
-using Unity.VisualScripting;
+using SimpleFileBrowser;
+using System.Collections;
 
 public class InputFileHandler : MonoBehaviour
 {
@@ -14,15 +14,33 @@ public class InputFileHandler : MonoBehaviour
 
     public void OpenFileBrowser()
     {
-        string path = EditorUtility.OpenFilePanel("Select a text file", "", "txt");
+        FileBrowser.SetFilters(true, new FileBrowser.Filter("Text Files", ".txt"));
+        FileBrowser.SetDefaultFilter(".txt");
+        FileBrowser.AddQuickLink("Users", "C:\\Users", null);
 
-        if (!string.IsNullOrEmpty(path))
+        StartCoroutine(ShowLoadDialogCoroutine());
+    }
+
+    IEnumerator ShowLoadDialogCoroutine()
+    {
+        // Show a load file dialog and wait for a response from user
+        // Load file/folder: both, Allow multiple selection: true
+        // Initial path: default (Documents), Initial filename: empty
+        // Title: "Load File", Submit button text: "Load"
+        yield return FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, true, null, null, "Load Files and Folders", "Load");
+
+        // Dialog is closed
+        // Print whether the user has selected some files/folders or cancelled the operation (FileBrowser.Success)
+        Debug.Log(FileBrowser.Success);
+
+        if (FileBrowser.Success)
         {
-            var file = File.Open(path, FileMode.Open);
-            m_FileName.text = file.Name;
-            file.Close();
+            // Print paths of the selected files (FileBrowser.Result) (null, if FileBrowser.Success is false)
+            for (int i = 0; i < FileBrowser.Result.Length; i++)
+                Debug.Log(FileBrowser.Result[i]);
 
-            m_FilePath = path;
+            m_FilePath = FileBrowser.Result[0];
+            m_FileName.text = m_FilePath;
         }
     }
 

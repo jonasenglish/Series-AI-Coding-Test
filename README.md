@@ -1,5 +1,5 @@
 # Stack Validation Program
-This program was made as an example to demonstrate my skills with C# and Programming in general.
+This program was made as an example to demonstrate my skills with C# and Programming in general. This application takes in a user's input and determines if this input is a valid stack.
 
 ## How to use this Unity Based Application:
 A stack, delimeted by spaces, can be written into the input field on the left, and then validated using the validate button. The result will be printed into the output. Example input: 0 1 2 3 4
